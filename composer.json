@@ -12,7 +12,7 @@
   ],
   "require": {
     "php": ">=7.2.0",
-    "slordef/fragmency-core": "^1.0"
+    "slordef/fragmency-core": "dev-master"
   },
   "minimum-stability": "dev",
   "autoload": {
