@@ -8,7 +8,7 @@ use Fragmency\Core\Request;
 
 class Router
 {
-    private static $routes;
+    private static $routes = [];
 
     public static function newRoute($method,$path,$callable){
         $route = new Route($method,$path,$callable);
@@ -20,7 +20,8 @@ class Router
 
     public function __construct(Application $app){
         $this->app = $app;
-        require_once $this->app->getConfigFolder()."/router.php";
+        $file = $this->app->getConfigFolder()."/router.php";
+        if(file_exists($file)) require_once $file;
     }
 
     public function getRoute(){
